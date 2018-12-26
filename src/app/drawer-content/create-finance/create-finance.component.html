@@ -1,0 +1,12 @@
+  <div class="containerCreateFinance">
+  <mat-card style="width: 50%">
+    <form [formGroup]="formCreateFinance">
+
+      <mat-form-field  style="width: 100%">
+        <input matInput placeholder="Nome" formControlName="name" >
+      </mat-form-field>
+
+      <button class="btnSalvar" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Salvar</button>
+    </form>
+  </mat-card>
+</div>

@@ -3,11 +3,17 @@
         <ng-template pTemplate="header">
             <tr>
                 <th>Nome</th>
+                <th style="width: 3em"></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-financa>
             <tr>
-                <td>{{financa.nome}}</td>
+                <td>{{financa.name}}</td>
+                <td>
+                    <button style="margin-left: -10px !important" mat-icon-button>
+                        <mat-icon (click)="deleteFinance(financa.id)" style="color: red;">clear</mat-icon>
+                    </button>
+                </td>
             </tr>
         </ng-template>
     </p-table>

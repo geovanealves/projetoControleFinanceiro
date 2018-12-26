@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Financa } from '../../models/financa';
-import { ListFinancesService } from './list-finances.service';
+import { FinanceServiceService } from '../../drawer-content/finance-service.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,12 +12,14 @@ export class ListFinancesComponent implements OnInit {
 
   financas: Observable<Financa[]>;
 
-  constructor(private listFinancesService: ListFinancesService) { }
+  constructor(private financeService: FinanceServiceService) { }
 
   ngOnInit() {
-    this.financas = this.listFinancesService.listFincancas();
+    this.financas = this.financeService.listFincancas();
   }
 
-  
+  deleteFinance(id){
+    this.financeService.deleteFinance(id);
+  }
 
 }
