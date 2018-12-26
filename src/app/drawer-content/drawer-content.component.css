@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  height: calc(100% - 64px);
+}
+
+.list {
+  padding: 0;
+}
+
+.list :hover {
+  background: #F0F8FF!important;
+  cursor: pointer;
+}
+
+.itemList{
+  font-size: 14px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-weight: bold !important;
+}

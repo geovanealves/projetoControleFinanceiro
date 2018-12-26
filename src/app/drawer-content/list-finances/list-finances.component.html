@@ -1,0 +1,14 @@
+<div class="containerListFinancas">
+    <p-table class="listFinancas" [value]="financas | async">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-financa>
+            <tr>
+                <td>{{financa.nome}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

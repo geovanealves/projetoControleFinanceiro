@@ -1,0 +1,12 @@
+.containerListFinancas {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.listFinancas {
+    width: calc(80% - 259px)
+}
