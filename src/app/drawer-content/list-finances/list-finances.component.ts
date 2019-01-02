@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ListFinancesComponent implements OnInit {
 
-  financas: Observable<Financa[]>;
+  financas:Observable<Financa[]>;
 
   constructor(private financeService: FinanceServiceService) { }
 
@@ -18,7 +18,7 @@ export class ListFinancesComponent implements OnInit {
     this.financas = this.financeService.listFincancas();
   }
 
-  deleteFinance(id){
+  deleteFinance(id) {
     this.financeService.deleteFinance(id);
   }
 

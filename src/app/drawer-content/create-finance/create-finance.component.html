@@ -6,6 +6,19 @@
         <input matInput placeholder="Nome" formControlName="name" >
       </mat-form-field>
 
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Valor" formControlName="valor" >
+      </mat-form-field>
+
+      <mat-form-field>
+        <select matNativeControl required formControlName="tipo">
+          <option value="Comida">Comida</option>
+          <option value="Combustível">Combustível</option>
+          <option value="Roupas/Calçados">Roupas/Calçados</option>
+          <option value="Cartão de crédito">Cartão de Crédito</option>
+        </select>
+      </mat-form-field>
+
       <button class="btnSalvar" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Salvar</button>
     </form>
   </mat-card>

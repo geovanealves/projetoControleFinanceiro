@@ -19,16 +19,19 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatButtonModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { TableModule } from 'primeng/table';
+import {ChartModule} from 'primeng/chart';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PanelLeftComponent } from './drawer-content/drawer-content.component';
 import { ListFinancesComponent } from './drawer-content/list-finances/list-finances.component';
 import { CreateFinanceComponent } from './drawer-content/create-finance/create-finance.component';
+import { EstatisticasComponent } from './drawer-content/estatisticas/estatisticas.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { CreateFinanceComponent } from './drawer-content/create-finance/create-f
     NavBarComponent,
     PanelLeftComponent,
     ListFinancesComponent,
-    CreateFinanceComponent
+    CreateFinanceComponent,
+    EstatisticasComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import { CreateFinanceComponent } from './drawer-content/create-finance/create-f
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    TableModule
+    MatSelectModule,
+    TableModule,
+    ChartModule
   ],
   schemas: [
     NO_ERRORS_SCHEMA

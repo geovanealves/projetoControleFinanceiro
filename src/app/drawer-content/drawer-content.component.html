@@ -1,21 +1,31 @@
 <mat-drawer-container class="container">
   <mat-drawer style="width: 260px;" mode="side" opened>
     <mat-list class="list">
-        <mat-list-item class="itemList" routerLink="listarFinanças">
-            <mat-icon>list</mat-icon>
-            <span style="margin-left: 10px;">
-              Listar Finanças
-            </span>
-          </mat-list-item>
+
+      <mat-list-item class="itemList" routerLink="listarFinanças">
+        <mat-icon>list</mat-icon>
+        <span style="margin-left: 10px;">
+          Listar Finanças
+        </span>
+      </mat-list-item>
+
       <mat-list-item class="itemList" routerLink="adicionarFinança">
         <mat-icon>add</mat-icon>
         <span style="margin-left: 10px;">
           Adicionar Finança
         </span>
       </mat-list-item>
+
+      <mat-list-item class="itemList" routerLink="estatísticas">
+        <mat-icon>equalizer</mat-icon>
+        <span style="margin-left: 10px;">
+          Estatísticas
+        </span>
+      </mat-list-item>
+
     </mat-list>
   </mat-drawer>
   <mat-drawer-content>
-      <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

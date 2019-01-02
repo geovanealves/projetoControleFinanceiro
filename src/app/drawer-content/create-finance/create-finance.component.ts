@@ -16,7 +16,9 @@ export class CreateFinanceComponent implements OnInit {
   constructor(fb: FormBuilder, fnService: FinanceServiceService) {
     this.financeService = fnService;
     this.formCreateFinance = fb.group({
-      name: ['', Validators.required]
+      name: ['', Validators.required],
+      valor: ['', Validators.required],
+      tipo: ['', Validators.required]
     });
   }
 
@@ -26,8 +28,9 @@ export class CreateFinanceComponent implements OnInit {
   saveFinance(form: FormGroup) {
     let finance: Financa;
 
-    finance = { ...form.value };
-
+    finance = {...form.value};
+    finance.data = new Date();
+    
     this.financeService.saveFinance(finance);
   }
 
