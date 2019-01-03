@@ -1,7 +1,7 @@
-export class Financa{
+export class Financa {
     id: string;
     nome: string;
     valor: number;
-    data: Date;
+    data: any;
     tipo: string;
 }

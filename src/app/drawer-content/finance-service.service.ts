@@ -31,7 +31,7 @@ export class FinanceServiceService {
     )
   }
 
-  listFinancasOrderDate(): Observable<Financa[]> {
+  listarFinancasPorMes(): Observable<Financa[]> {
     return this.db.collection<Financa>("Financas").valueChanges();
   }
 

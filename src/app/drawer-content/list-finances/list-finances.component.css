@@ -8,5 +8,7 @@
 }
 
 .listFinancas {
-    width: calc(80% - 259px)
+    width: calc(80% - 259px);
+    height: 300px;
+    margin-top: 20px;
 }

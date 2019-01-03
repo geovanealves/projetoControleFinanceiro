@@ -12,18 +12,18 @@ export class EstatisticasComponent implements OnInit {
   private backgroundColor = ["#191970", "#00FFFF", "#98FB98", "#DAA520", "#9370DB", "#C71585", "#FF6384", "#FFD700", "#FAF0E6", "#E6E6FA", "#E0FFFF", "#FF00FF"];
   private hoverBackgroundColor = ["#191970", "#00FFFF", "#98FB98", "#DAA520", "#9370DB", "#C71585", "#FF6384", "#FFD700", "#FAF0E6", "#E6E6FA", "#E0FFFF", "#FF00FF"];
   private quantidadePorMes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
+  
   data: any
 
-  constructor(private financeService: FinanceServiceService) {}
+  constructor(private financeService: FinanceServiceService) { }
 
   ngOnInit() {
-    this.financeService.listFinancasOrderDate().subscribe(
+    this.financeService.listarFinancasPorMes().subscribe(
       finances => {
         finances.forEach(finance => {
-          let date = finance.data.toDate();  
+          let date = finance.data.toDate();
           let mes = date.toLocaleDateString('pt-br', { month: 'long' })
-          
+
           switch (mes) {
             case 'janeiro':
               this.quantidadePorMes[0]++;
@@ -62,7 +62,6 @@ export class EstatisticasComponent implements OnInit {
               this.quantidadePorMes[11]++;
               break;
           }
-
         });
 
         this.data = {
@@ -75,7 +74,7 @@ export class EstatisticasComponent implements OnInit {
             }
           ]
         }
-      }     
-   )
+      }
+    )
   }
 }

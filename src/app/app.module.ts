@@ -20,7 +20,9 @@ import {
   MatInputModule,
   MatButtonModule,
   MatSnackBarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatGridListModule
+
 } from '@angular/material';
 
 import { TableModule } from 'primeng/table';
@@ -59,6 +61,7 @@ import { EstatisticasComponent } from './drawer-content/estatisticas/estatistica
     MatInputModule,
     MatSnackBarModule,
     MatSelectModule,
+    MatGridListModule,
     TableModule,
     ChartModule
   ],
