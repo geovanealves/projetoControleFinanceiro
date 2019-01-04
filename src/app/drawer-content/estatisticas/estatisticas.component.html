@@ -1,17 +1,13 @@
+<div id="content" #content>
 <mat-grid-list cols="2" rowHeight="500px">
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-card class="card-grafico">
-            <mat-card-title style="text-align: center;">Relatório Mensal de Gastos</mat-card-title>
-            <p-chart type="pie" [data]="data"></p-chart>
-        </mat-card>
+        <app-grafico-por-categoria style="width: 90%;"></app-grafico-por-categoria>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-card class="card-grafico">
-            <mat-card-title style="text-align: center;">Relatório por Categoria</mat-card-title>
-            <p-chart type="pie" [data]="data"></p-chart>
-        </mat-card>
+        <app-grafico-por-mes style="width: 90%;"></app-grafico-por-mes>
     </mat-grid-tile>
 
 </mat-grid-list>
+</div>

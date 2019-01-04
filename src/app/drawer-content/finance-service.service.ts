@@ -31,12 +31,7 @@ export class FinanceServiceService {
     )
   }
 
-  listarFinancasPorMes(): Observable<Financa[]> {
-    return this.db.collection<Financa>("Financas").valueChanges();
-  }
-
   saveFinance(finance: Financa) {
-    debugger
     this.db.collection("Financas").add(finance);
     this.router.navigate(['/listarFinanças']);
   }

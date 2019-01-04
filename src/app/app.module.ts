@@ -34,6 +34,8 @@ import { PanelLeftComponent } from './drawer-content/drawer-content.component';
 import { ListFinancesComponent } from './drawer-content/list-finances/list-finances.component';
 import { CreateFinanceComponent } from './drawer-content/create-finance/create-finance.component';
 import { EstatisticasComponent } from './drawer-content/estatisticas/estatisticas.component';
+import { GraficoPorMesComponent } from './drawer-content/estatisticas/grafico-por-mes/grafico-por-mes.component';
+import { GraficoPorCategoriaComponent } from './drawer-content/estatisticas/grafico-por-categoria/grafico-por-categoria.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { EstatisticasComponent } from './drawer-content/estatisticas/estatistica
     PanelLeftComponent,
     ListFinancesComponent,
     CreateFinanceComponent,
-    EstatisticasComponent
+    EstatisticasComponent,
+    GraficoPorMesComponent,
+    GraficoPorCategoriaComponent
   ],
   imports: [
     BrowserModule,
