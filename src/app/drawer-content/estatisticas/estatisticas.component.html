@@ -1,13 +1,12 @@
-<div id="content" #content>
-<mat-grid-list cols="2" rowHeight="500px">
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <app-grafico-por-categoria style="width: 90%;"></app-grafico-por-categoria>
-    </mat-grid-tile>
+    <mat-grid-list cols="2" rowHeight="500px">
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <app-grafico-por-mes style="width: 90%;"></app-grafico-por-mes>
-    </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <app-grafico-por-categoria style="width: 90%;"></app-grafico-por-categoria>
+        </mat-grid-tile>
 
-</mat-grid-list>
-</div>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <app-grafico-por-mes style="width: 90%;"></app-grafico-por-mes>
+        </mat-grid-tile>
+
+    </mat-grid-list>
