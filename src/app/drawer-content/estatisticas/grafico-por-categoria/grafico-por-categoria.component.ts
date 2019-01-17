@@ -40,35 +40,7 @@ export class GraficoPorCategoriaComponent implements OnInit {
               }
             ]
           }
-
         })
       });
-  }
-
-  public downloadPdf() {
-    let canvas: any;
-    canvas = document.getElementById("content");
-    let win = window.open();
-    debugger
-    win.document.write(canvas.innerHTML);
-    win.print();
-    win.location.reload();
-
-    // let doc = new jsPDF();
-
-    // let special = {
-    //   '#editor': function (element, renderer) {
-    //     return true;
-    //   }
-    // };
-
-    // let content = this.content.nativeElement;
-
-    // doc.fromHTML(content.innerHTML, 15, 15, {
-    //   'width': 190,
-    //   'elementHandlers': special
-    // });
-
-    // doc.save('test.pdf');
   }
 }

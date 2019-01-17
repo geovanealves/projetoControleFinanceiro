@@ -6,6 +6,7 @@
                 <th style="width: 120px;">Valor</th>
                 <th style="width: 180px;">Tipo</th>
                 <th style="width: 44px; text-align: center;"></th>
+                <th style="width: 44px; text-align: center;"></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-financa>
@@ -15,7 +16,12 @@
                 <td style="text-align: center;">{{financa.tipo}}</td>
                 <td>
                     <button style="margin-left: -10px !important" mat-icon-button>
-                        <mat-icon (click)="deleteFinance(financa.id)" style="color: red;">clear</mat-icon>
+                        <mat-icon (click)="editarFinance(financa.id)" style="color: #D7DF01;">create</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button style="margin-left: -10px !important" mat-icon-button>
+                        <mat-icon (click)="deleteFinance(financa.valor)" style="color: red;">clear</mat-icon>
                     </button>
                 </td>
             </tr>

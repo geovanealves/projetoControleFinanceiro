@@ -21,5 +21,9 @@ export class ListFinancesComponent implements OnInit {
   deleteFinance(id) {
     this.financeService.deleteFinance(id);
   }
+  
+  editarFinance(f: Financa){
+  debugger
+  }
 
 }

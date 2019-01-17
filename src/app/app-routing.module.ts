@@ -5,16 +5,11 @@ import { ListFinancesComponent } from './drawer-content/list-finances/list-finan
 import { CreateFinanceComponent } from './drawer-content/create-finance/create-finance.component';
 import { EstatisticasComponent } from './drawer-content/estatisticas/estatisticas.component';
 
-
-import { LoginComponent } from './login/login.component';
-import { AuthGuardComponent } from './auth-guard/auth-guard.component';
-
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent, canActivate: [AuthGuardComponent] },
-  { path: 'listarFinanças', component: ListFinancesComponent, canActivate: [AuthGuardComponent] },
-  { path: 'adicionarFinança', component: CreateFinanceComponent, canActivate: [AuthGuardComponent] },
-  { path: 'estatísticas', component: EstatisticasComponent, canActivate: [AuthGuardComponent] }
+  { path: '', redirectTo: 'listarFinanças', pathMatch: 'full'},
+  { path: 'listarFinanças', component: ListFinancesComponent},
+  { path: 'adicionarFinança', component: CreateFinanceComponent},
+  { path: 'estatísticas', component: EstatisticasComponent}
 ];
 
 @NgModule({
