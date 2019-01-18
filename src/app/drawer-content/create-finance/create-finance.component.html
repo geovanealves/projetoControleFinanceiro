@@ -3,7 +3,7 @@
     <form [formGroup]="formCreateFinance">
 
       <mat-form-field  style="width: 100%">
-        <input matInput placeholder="Nome" formControlName="name" >
+        <input matInput placeholder="Nome" formControlName="nome" >
       </mat-form-field>
 
       <mat-form-field style="width: 100%">
@@ -19,7 +19,14 @@
         </select>
       </mat-form-field>
 
-      <button class="btnSalvar" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Salvar</button>
+      <ng-template *ngIf="estado == 'editando'">
+        <button class="btnSalvar" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Atualizar</button>
+      </ng-template>
+
+      <ng-template *ngIf="estado == 'criando'">
+        <button class="btnSalvar" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Salvar</button>
+      </ng-template>
+    
     </form>
   </mat-card>
 </div>

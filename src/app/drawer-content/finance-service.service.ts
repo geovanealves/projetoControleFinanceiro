@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Financa } from '../models/financa';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 
@@ -11,11 +11,9 @@ import { Router } from '@angular/router';
 })
 export class FinanceServiceService {
 
-  private itemsCollection: AngularFirestoreCollection<Financa>;
+  financa: Observable<Financa>;
 
-  constructor(private db: AngularFirestore, public snackBar: MatSnackBar, private router: Router) {
-    //this.itemsCollection = this.db.collection<Financa>("Financas");
-  }
+  constructor(private db: AngularFirestore, public snackBar: MatSnackBar, private router: Router) {  }
 
   listFincancas(): Observable<Financa[]> {
     return this.db.collection<Financa>("Financas").snapshotChanges().pipe(
@@ -29,6 +27,10 @@ export class FinanceServiceService {
         }
       )
     )
+  }
+
+  listFincanca(id): Observable<any>{ 
+    return this.db.collection<Financa>("Financas").doc(id).snapshotChanges();
   }
 
   saveFinance(finance: Financa) {

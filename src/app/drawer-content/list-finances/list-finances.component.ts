@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Financa } from '../../models/financa';
 import { FinanceServiceService } from '../../drawer-content/finance-service.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-finances',
@@ -10,9 +11,12 @@ import { Observable } from 'rxjs';
 })
 export class ListFinancesComponent implements OnInit {
 
+  router: Router;
   financas:Observable<Financa[]>;
 
-  constructor(private financeService: FinanceServiceService) { }
+  constructor(private financeService: FinanceServiceService, private r: Router) {
+    this.router = r;
+   }
 
   ngOnInit() {
     this.financas = this.financeService.listFincancas();
@@ -22,8 +26,8 @@ export class ListFinancesComponent implements OnInit {
     this.financeService.deleteFinance(id);
   }
   
-  editarFinance(f: Financa){
-  debugger
+  editarFinance(financa: Financa){
+    this.router.navigate(['/editarFinanca/:id', {id: financa.id}]);
   }
 
 }

@@ -8,6 +8,7 @@ import { EstatisticasComponent } from './drawer-content/estatisticas/estatistica
 const appRoutes: Routes = [
   { path: '', redirectTo: 'listarFinanças', pathMatch: 'full'},
   { path: 'listarFinanças', component: ListFinancesComponent},
+  { path: 'editarFinanca/:id', component: CreateFinanceComponent},
   { path: 'adicionarFinança', component: CreateFinanceComponent},
   { path: 'estatísticas', component: EstatisticasComponent}
 ];

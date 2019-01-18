@@ -11,17 +11,17 @@
         </ng-template>
         <ng-template pTemplate="body" let-financa>
             <tr>
-                <td>{{financa.name}}</td>
+                <td>{{financa.nome}}</td>
                 <td style="text-align: center;">R$ {{financa.valor}}</td>
                 <td style="text-align: center;">{{financa.tipo}}</td>
                 <td>
                     <button style="margin-left: -10px !important" mat-icon-button>
-                        <mat-icon (click)="editarFinance(financa.id)" style="color: #D7DF01;">create</mat-icon>
+                        <mat-icon (click)="editarFinance(financa)" style="color: #D7DF01;">create</mat-icon>
                     </button>
                 </td>
                 <td>
                     <button style="margin-left: -10px !important" mat-icon-button>
-                        <mat-icon (click)="deleteFinance(financa.valor)" style="color: red;">clear</mat-icon>
+                        <mat-icon (click)="deleteFinance(financa.id)" style="color: red;">clear</mat-icon>
                     </button>
                 </td>
             </tr>
