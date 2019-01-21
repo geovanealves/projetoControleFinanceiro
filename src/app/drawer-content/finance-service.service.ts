@@ -13,7 +13,7 @@ export class FinanceServiceService {
 
   financa: Observable<Financa>;
 
-  constructor(private db: AngularFirestore, public snackBar: MatSnackBar, private router: Router) {  }
+  constructor(private db: AngularFirestore, public snackBar: MatSnackBar, private router: Router) { }
 
   listFincancas(): Observable<Financa[]> {
     return this.db.collection<Financa>("Financas").snapshotChanges().pipe(
@@ -29,7 +29,7 @@ export class FinanceServiceService {
     )
   }
 
-  listFincanca(id): Observable<any>{ 
+  listFincanca(id): Observable<any> {
     return this.db.collection<Financa>("Financas").doc(id).snapshotChanges();
   }
 
@@ -38,12 +38,29 @@ export class FinanceServiceService {
     this.router.navigate(['/listarFinanças']);
   }
 
+  updateFinance(finance: Financa) {
+    this.db.collection("Financas").doc(finance.id).update({
+      nome: finance.nome,
+      valor: finance.valor,
+      tipo: finance.tipo
+    })
+      .then(() => {
+        this.openSnackBar('Finança atualizada com sucesso!', '');
+        this.router.navigate(['/listarFinanças']);
+      })
+      .catch((error) => {
+        this.openSnackBar('Houve um erro ao atualizar a finança!', '');
+      });
+  }
+
   deleteFinance(id) {
-    this.db.collection("Financas").doc(id).delete().then((doc) => {
-      this.openSnackBar('Finança deletada com sucesso!', '');
-    }).catch(function (error) {
-      this.openSnackBar('Houve um erro ao deletar a finança!', '');
-    });
+    this.db.collection("Financas").doc(id).delete()
+      .then((doc) => {
+        this.openSnackBar('Finança deletada com sucesso!', '');
+      })
+      .catch(function (error) {
+        this.openSnackBar('Houve um erro ao deletar a finança!', '');
+      });
   }
 
   openSnackBar(message: string, action: string) {

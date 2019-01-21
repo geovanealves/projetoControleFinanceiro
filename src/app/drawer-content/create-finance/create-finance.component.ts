@@ -26,7 +26,8 @@ export class CreateFinanceComponent implements OnInit {
     this.formCreateFinance = fb.group({
       nome: ['', Validators.required],
       valor: ['', Validators.required],
-      tipo: ['', Validators.required]
+      tipo: ['', Validators.required],
+      id: ['',]
     });
   }
 
@@ -34,32 +35,45 @@ export class CreateFinanceComponent implements OnInit {
     let idFinance;
 
     idFinance = this.router.snapshot.params['id'];
-    this.estado = 'editando';
 
     if (typeof idFinance != 'undefined') {
+      this.estado = 'editando';
+
       this.financeService.listFincanca(idFinance).subscribe(
         result => {
-          this.preencherFormulario(result.payload.data());
+          const id =  result.payload.id;
+          const data = {...result.payload.data()}
+
+          this.preencherFormulario({id: id, data: data});
         }
       );
     }
   }
 
-  preencherFormulario(financa: Financa){ 
-    this.formCreateFinance.setValue({
-      nome: financa.nome, 
-      valor: financa.valor,
-      tipo: financa.tipo
+  preencherFormulario(dados){ 
+    this.formCreateFinance.patchValue({
+      nome: dados.data.nome, 
+      valor: dados.data.valor,
+      tipo: dados.data.tipo,
+      id: dados.id
     });
   }
 
   saveFinance(form: FormGroup) {
     let finance: Financa;
 
-    finance = { ...form.value };
+    finance = form.value;
     finance.data = new Date();
 
     this.financeService.saveFinance(finance);
+  }
+
+  updateFinance(form: FormGroup){
+    let financa: Financa;
+
+    financa = form.value;
+    
+    this.financeService.updateFinance(financa);
   }
 
 }

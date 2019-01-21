@@ -18,14 +18,14 @@
           <option value="Cartão de crédito">Cartão de Crédito</option>
         </select>
       </mat-form-field>
+      
+      <div *ngIf="estado == 'editando'">
+        <button class="btnCentralizado" (click)="updateFinance(formCreateFinance)" mat-stroked-button color="primary">Atualizar</button>
+      </div>
 
-      <ng-template *ngIf="estado == 'editando'">
-        <button class="btnSalvar" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Atualizar</button>
-      </ng-template>
-
-      <ng-template *ngIf="estado == 'criando'">
-        <button class="btnSalvar" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Salvar</button>
-      </ng-template>
+      <div *ngIf="estado == 'criando'">
+        <button class="btnCentralizado" (click)="saveFinance(formCreateFinance)" mat-stroked-button color="primary">Salvar</button>
+      </div>
     
     </form>
   </mat-card>
