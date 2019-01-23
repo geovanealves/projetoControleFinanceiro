@@ -38,6 +38,7 @@ import { EstatisticasComponent } from './drawer-content/estatisticas/estatistica
 import { GraficoPorMesComponent } from './drawer-content/estatisticas/grafico-por-mes/grafico-por-mes.component';
 import { GraficoPorCategoriaComponent } from './drawer-content/estatisticas/grafico-por-categoria/grafico-por-categoria.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './drawer-content/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { LoginComponent } from './login/login.component';
     EstatisticasComponent,
     GraficoPorMesComponent,
     GraficoPorCategoriaComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
