@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { environment } from '../environments/environment';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import {
   MatToolbarModule,
   MatIconModule,
@@ -22,12 +24,14 @@ import {
   MatButtonModule,
   MatSnackBarModule,
   MatSelectModule,
-  MatGridListModule
+  MatGridListModule,
+  MatDividerModule
 
 } from '@angular/material';
 
 import { TableModule } from 'primeng/table';
 import { ChartModule } from 'primeng/chart';
+import {CardModule} from 'primeng/card';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -39,6 +43,7 @@ import { GraficoPorMesComponent } from './drawer-content/estatisticas/grafico-po
 import { GraficoPorCategoriaComponent } from './drawer-content/estatisticas/grafico-por-categoria/grafico-por-categoria.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './drawer-content/dashboard/dashboard.component';
+import { CardInformationComponent } from './drawer-content/dashboard/card-information/card-information.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,8 @@ import { DashboardComponent } from './drawer-content/dashboard/dashboard.compone
     GraficoPorMesComponent,
     GraficoPorCategoriaComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CardInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +66,7 @@ import { DashboardComponent } from './drawer-content/dashboard/dashboard.compone
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -71,8 +78,10 @@ import { DashboardComponent } from './drawer-content/dashboard/dashboard.compone
     MatSnackBarModule,
     MatSelectModule,
     MatGridListModule,
+    MatDividerModule,
     TableModule,
-    ChartModule
+    ChartModule,
+    CardModule
   ],
   schemas: [
     NO_ERRORS_SCHEMA
