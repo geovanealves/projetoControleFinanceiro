@@ -1,1 +1,17 @@
-<app-card-information></app-card-information>
+<div style="display: flex;">
+    <div class="cardsPedidos" style="width: 50%">
+        <div *ngFor="let card of cards">
+            <app-card-information [card]="card"></app-card-information>
+        </div>
+    </div>
+
+    <div style="width: 50%">
+        <p-chart type="bar" [data]="dadosGraficoBarras"></p-chart>
+    </div>
+</div>
+
+<div class="card-maps">
+    <mat-card style="width: 90%">
+        <div #gmap style="width:99%; height:400px;"></div>
+    </mat-card>
+</div>

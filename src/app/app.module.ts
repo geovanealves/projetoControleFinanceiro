@@ -25,7 +25,8 @@ import {
   MatSnackBarModule,
   MatSelectModule,
   MatGridListModule,
-  MatDividerModule
+  MatDividerModule,
+  MatMenuModule
 
 } from '@angular/material';
 
@@ -79,6 +80,7 @@ import { CardInformationComponent } from './drawer-content/dashboard/card-inform
     MatSelectModule,
     MatGridListModule,
     MatDividerModule,
+    MatMenuModule,
     TableModule,
     ChartModule,
     CardModule

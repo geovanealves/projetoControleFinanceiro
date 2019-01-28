@@ -1,30 +1,30 @@
 <mat-card class="card">
+  <mat-card-title>
+    <mat-toolbar style="height: 20px; justify-content: flex-end;" class="toolbar">
+      <button mat-button [matMenuTriggerFor]="menu" mat-icon-button style="margin-right: -20px;">
+        <mat-icon style="font-size: 22px;">more_vert</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Informações dos Pedidos</button>
+        </mat-menu>
+      </button>
+    </mat-toolbar>
 
-    <mat-card-title >
-      <mat-toolbar style="height: 20px; justify-content: flex-end;" class="toolbar">
-        <button mat-icon-button style="margin-right: -20px;">
-          <mat-icon style="font-size: 22px;">more_vert</mat-icon>
-        </button>
-      </mat-toolbar>
-  
-      <mat-toolbar style="height: 76px;" class="toolbar">
-        <div class="spacer center">
-          <div style="text-align: center;" [ngStyle]="{'color': motivo.cor}">Pedidos</div>
-          <div style="font-size: 18px; text-align: center">{{motivo.quantidade}}</div>
-        </div>
-      </mat-toolbar>
-    </mat-card-title>
-  
-    <mat-card-content>
-  
-      <div class="footer">
-        <mat-toolbar style="height: 50px;" class="toolbar">
-          <span class="spacer" style="color: white; font-size: 16px;">{{motivo.descricao}}</span>
-          <mat-icon style="color: white">{{card.iconeFooter}}</mat-icon>
-        </mat-toolbar>
+    <mat-toolbar style="height: 76px;" class="toolbar">
+      <div class="spacer center">
+        <div style="text-align: center;" [ngStyle]="{'color': card.cor}">Pedidos</div>
+        <div style="font-size: 18px; text-align: center">{{card.quantidade}}</div>
       </div>
-  
-    </mat-card-content>
-  </mat-card>
+    </mat-toolbar>
+  </mat-card-title>
 
-  0ba360
+  <mat-card-content>
+
+    <div class="footer" [ngClass]="card.gradienteClass">
+      <mat-toolbar style="height: 50px;" class="toolbar">
+        <span class="spacer" style="color: white; font-size: 16px;">{{card.descricao}}</span>
+        <mat-icon style="color: white">{{card.iconeFooter}}</mat-icon>
+      </mat-toolbar>
+    </div>
+
+  </mat-card-content>
+</mat-card>
